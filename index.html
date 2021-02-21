@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width">
+  	<meta name="description" content="main">
+  	<meta name="keywords" content="main">
+  	<style>
+  	.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+	}
+	.modal .modal_content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    z-index: 99999;
+	}
+	.modal .modal_content .close_modal_window {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+	}
+  	</style>
+</head>
+<body>
+	<!-- 0) Ввод имени пользователя -->
+    <div id="namediv"></div>
+	<div class="width">
+		<div class="text">
+			<hr>
+			<p>JavaScript  — мультипарадигменный язык программирования. Поддерживает объектно-ориентированный, императивный и функциональный стили. Является реализацией спецификации ECMAScript.<br><br>
+
+			JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.<br><br>
+
+			Основные архитектурные черты: динамическая типизация, слабая типизация, автоматическое управление памятью, прототипное программирование, функции как объекты первого класса.<br><br>
+
+			На JavaScript оказали влияние многие языки, при разработке была цель сделать язык похожим на Java. Языком JavaScript не владеет какая-либо компания или организация, что отличает его от ряда языков программирования, используемых в веб-разработке.<br><br>
+
+			Название «JavaScript» является зарегистрированным товарным знаком корпорации Oracle в США.</p>
+			Где применяется JS:
+			<ul>
+				
+				<li>Математические рассчёты</li>
+				<li>Обработка данных в HTML-формах</li>
+				<li>Взаимодействие с пользователем и событиями</li>
+				<li>Взаимодействие с HTML-элементами на странице и управление их содержимым и стилями</li>
+			</ul>
+		</div>
+		<!-- 1) Рассчёт площади треугольника -->
+		<hr>
+		Пример математический рассчётов. Найдём площадь треугольника через высоту и и основание<br>
+		<div>
+			<form name="treugolnic">
+			<input id="height" type="text" name="quantity" placeholder="Высота">
+			<input id="width" type="text" name="quanti" placeholder="Основание">
+			<input id="button1" type="button" value="Ответ"/>
+  			<div id="res"></div>
+			</form>
+		</div>
+		<!-- 2) Сравнение длин строк -->
+		<hr>
+  		Сравнение длин строк<br>
+	<div>
+		<form name="strings">
+		<input id="text1" type="text" name="str1" placeholder="Первая строка">
+		<input id="text2" type="text" name="str2" placeholder="Вторая строка">
+		<input id="strButton" type="button" onclick="lenghtRun()" value="Ответ"/>
+		<div id="string"></div>
+		</form>
+	</div>
+	<!-- 3) Сравнение длин множества строк -->
+    <hr>
+    <div>
+    	Сравнение длин множества строк<br><br>
+    	Введите от 2 и более строк, разделив их пробелом<br>
+   	 	<input id="superString" type="text" name="superString" placeholder="Ввести">
+    	<input id="superButton" type="button" value="Ответ"/><br>
+    	<div id="superStr"></div>
+    </div>
+
+	<!-- 4) Таймер -->
+	<hr>
+  	<div>
+      	<p>Таймер/Секундомер</p>
+    </div>
+	<div class="timer">
+		Введите здесь значения, чтобы начать обратный отсчёт. Если оставить эти поля пустыми, то запустится не таймер, а секундомер<br>
+    	<input id="h" type="text" name="superTimer" placeholder="ЧЧ">
+    	<input id="m" type="text" name="superTimer" placeholder="ММ">
+    	<input id="s" type="text" name="superTimer" placeholder="СС"><BR>
+ 	
+  		<input id="start" type="button" value="Старт">
+  		<input id="end" type="button"  value="Стоп"><BR>
+  	
+    	<div id="hor"></div>
+    	<div id="min"></div>
+    	<div id="sec"></div>
+  	</div>
+
+  	
+
+    <!-- 5) Тест -->
+    <hr>
+    	<div id="test">
+    	<div>
+    		1. JavaScript - это язык...<br>
+    		<div class ="question">
+				<input type="radio" name="q1" id="q1_1" ><label class="form-check-label" for="q1_1">сценариев</label><br>
+				<input type="radio" name="q1" id="q1_2" ><label class="form-check-label" for="q1_2">сценариев фильмов</label><br>
+				<input type="radio" name="q1" id="q1_3" ><label class="form-check-label" for="q1_3">жителей Великобритании</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		2. Для чего нужен JavaScript?<br>
+    		<div class ="question">
+				<input type="radio" name="q2" id="q2_1" ><label class="form-check-label" for="q2_1">Для создания анимации</label><br>
+				<input type="radio" name="q2" id="q2_2" ><label class="form-check-label" for="q2_2">Для вёрстки сайтов</label><br>
+				<input type="radio" name="q2" id="q2_3" ><label class="form-check-label" for="q2_2">Для математических рассчётов</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		3. Что может JS?<br>
+    		<div class ="question">
+				<input type="radio" name="q3" id="q3_1" ><label class="form-check-label" for="q3_2">Может то, что не могу я</label><br>
+				<input type="radio" name="q3" id="q3_2" ><label class="form-check-label" for="q3_2">Взаимодействать с пользователем и событиями</label><br>
+				<input type="radio" name="q3" id="q3_3" ><label class="form-check-label" for="q3_2">Создавать стилизацию сайта</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+    	<div>
+    		4. Можно ли с его помощью делать анимации?<br>
+    		<div class ="question">
+				<input type="radio" name="q4" id="q4_1" ><label class="form-check-label" for="q4_2">Нет</label><br>
+				<input type="radio" name="q4" id="q4_2" ><label class="form-check-label" for="q4_2">Да, но нужно подключать специальную библиотеку</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		5. Кем зарегистрировано название "JavaScript"?<br>
+    		<div class ="question">
+				<input type="radio" name="q5" id="q5_1" ><label class="form-check-label" for="q5_2">Mojang</label><br>
+				<input type="radio" name="q5" id="q5_2" ><label class="form-check-label" for="q5_2">Oracle</label><br>
+				<input type="radio" name="q5" id="q5_3" ><label class="form-check-label" for="q5_2">Apple</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		6. Правильный ответ - б<br>
+    		<div class ="question">
+				<input type="radio" name="q6" id="q6_1" ><label class="form-check-label" for="q6_2">это не б</label><br>
+				<input type="radio" name="q6" id="q6_2" ><label class="form-check-label" for="q6_2">б</label><br>
+				<input type="radio" name="q6" id="q6_3" ><label class="form-check-label" for="q6_2">b</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		7. JS применяется для... <br>
+    		<div class ="question">
+				<input type="radio" name="q7" id="q7_1" ><label class="form-check-label" for="q7_2">Просмотра кода сайта</label><br>
+				<input type="radio" name="q7" id="q7_2" ><label class="form-check-label" for="q7_2">Программного взаимодействия с браузером пользователя</label><br>
+				<input type="radio" name="q7" id="q7_3" ><label class="form-check-label" for="q7_2">Программного доступа к различным объектам приложений</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		8. Где можно написать сценарий?<br>
+    		<div class ="question">
+				<input type="radio" name="q8" id="q8_1" ><label class="form-check-label" for="q8_2"> В html файле через тег script</label><br>
+				<input type="radio" name="q8" id="q8_2" ><label class="form-check-label" for="q8q3_2">Во внешнем файле .js</label><br>
+				<input type="radio" name="q8" id="q8_3" ><label class="form-check-label" for="q8_2">Оба вапианта верны</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+
+    	<div>
+    		9. Где можно просмотреть готовый сайт?<br>
+    		<div class ="question">
+				<input type="radio" name="q9" id="q9_1" ><label class="form-check-label" for="q9_2">В программе, где он написан (окно предпросмотра)</label><br>
+				<input type="radio" name="q9" id="q9_2" ><label class="form-check-label" for="q9_2">В браузере Google</label><br>
+				<input type="radio" name="q9" id="q9_3" ><label class="form-check-label" for="q9_2">В любом web-браузере</label><br>
+			</div>
+    		
+    	</div><br>
+    	
+    	
+
+    	<div>
+    		10. JavaScript и Java - это один и тот же язык?<br>
+    		<div class ="question">
+				<input type="radio" name="q10" id="q10_1" ><label class="form-check-label" for="q10_2">Нет</label><br>
+				<input type="radio" name="q10" id="q10_2" ><label class="form-check-label" for="q10_2">Да</label><br>
+				<input type="radio" name="q10" id="q10_3" ><label class="form-check-label" for="q10_2">Да, но они используются в разных сферах</label><br>
+			</div>
+    		
+    	</div><br>
+    	<button class="btn" id="apply" onclick="summary();">Завершить</button>
+    	<div id="TestFin"></div>
+    	</div>
+
+    	 <!-- 6) Всплывающее окно -->
+    <hr>
+    
+   
+      
+
+<button id="btn_modal_window">Открыть всплывающее окно</button>
+  <div id="my_modal" class="modal">
+    <div class="modal_content">
+      <span class="close_modal_window">(Х)</span>
+      <div id="TimeTime"></div>
+      <div id="nameTime"></div>
+      <img id="img" src="Final.jpg" width="65%" height="65%">
+    </div>
+  </div>
+
+<script type="text/javascript" src="repeat.js"></script>
+
+
+</body>
+</html>
